@@ -1,0 +1,36 @@
+//Binding Syntax 
+
+Interpolation {}
+Property Binding []=""
+Event Binding ()=""
+
+
+//Directives
+custom or inbuilt 
+Structural Directives
+Attribute Directives
+use to change behaviour and appearance of DOM element
+can implement all lifecycle hooks,
+can not have template
+
+Built-in Directives
+*ngIf
+*ngFor
+*ngSwitch
+ngClass
+ngStyle
+
+//Pipes 
+data transformation
+don't change actual object
+
+built-in Pipes
+DatePipe
+UpperCase
+LowerCase
+Currency
+Secimal
+Percent
+Json
+Slice
+Async
