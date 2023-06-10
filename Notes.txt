@@ -12,25 +12,48 @@ Attribute Directives
 use to change behaviour and appearance of DOM element
 can implement all lifecycle hooks,
 can not have template
-
-Built-in Directives
-*ngIf
-*ngFor
-*ngSwitch
-ngClass
-ngStyle
+Built-in Directives:
+*ngIf *ngFor *ngSwitch
+ngClass ngStyle
 
 //Pipes 
 data transformation
 don't change actual object
+built-in Pipes : DatePipe UpperCase LowerCase Currency Secimal Percent Json Slice Async
 
-built-in Pipes
-DatePipe
-UpperCase
-LowerCase
-Currency
-Secimal
-Percent
-Json
-Slice
-Async
+//Add BootStrap in Angular
+ng add ngx-bootstrap
+Styles.css
+D:\FreeCodeCamp\Angular\Project\hotelinventoryapp\node_modules\bootstrap\dist\css\bootstrap.min.css
+or angular.json
+node_modules/bootstrap/dist/css/bootstrap.min.css
+
+//Lifecycle Hooks and component communication
+Component instance has lifecycle hooks which can help you to hook into different events on components.
+lifecycle ends when component is destroyed
+ngOnChanges (@Input @Output) bellow>>
+ngOnInit:after constructor>>
+ngDoCheck :any event is raised DoCheck will we called not implement ngonchange and docheck together
+ngAfterContentInit
+ngAfterContentChecked
+ngAfterViewInit
+ngAfterViewChecked
+ngOnDestroy
+
+//Component communication
+Using @Input and @Output
+Using @ViewChild and @ContentChild
+Using Services
+
+roomList component is in onchange detection stratergy onpush. the change detection tree will check this component is marked onpush
+run the change detection if something change inside this component
+changeDetection: ChangeDetectionStratergy.onpush
+we are not running ChangeDetectionStratergy untill and unless needed
+>>>component should not changa data internally
+>>>in case of assigning and passing data , the property should be immutable
+this.roomList =[...this.roomList,room]
+
+//ngOnChanges only apply where  @input property recides
+or input properties get updated or new value
+very useful in case you want to control what value needs to be updated whenever new data is passed
+you want to run change detection mannually,Services!
