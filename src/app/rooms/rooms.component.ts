@@ -1,15 +1,18 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Room, RoomList } from './rooms';
+import { HeaderComponent } from '../header/header.component';
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss'],
 })
-export class RoomsComponent implements OnInit,DoCheck {
+export class RoomsComponent implements OnInit,DoCheck,AfterViewInit,AfterViewChecked {
   hotelName = 'Lui visant';
   numberOfRooms = 10;
   hideRooms = false;
-  title='Room List'
+  title='Room List';
+  @ViewChild(HeaderComponent,{static:true}) headerComponent!:HeaderComponent;
+  // @ViewChildren(HeaderComponent)headerChildrenComponent!:QueryList<HeaderComponent>
   rooms: Room = {
     totalRooms: 20,
     availableRooms: 10,
@@ -18,6 +21,18 @@ export class RoomsComponent implements OnInit,DoCheck {
   roomList: RoomList[] = [];
   selectedRoom!:RoomList;
   constructor() {}
+  
+  ngAfterViewChecked(): void {
+    // throw new Error('Method not implemented.');
+    // this.headerComponent.title="RoomsView"
+
+  }
+  ngAfterViewInit(): void {
+    // throw new Error('Method not implemented.');
+  // console.log(this.headerComponent);
+   this.headerComponent.title="RoomsView"
+  // this.headerChildrenComponent.last.title ="Last title"
+  }
   ngDoCheck(): void {
     // throw new Error('Method not implemented.');
     console.log("onChanges is called");
@@ -25,6 +40,7 @@ export class RoomsComponent implements OnInit,DoCheck {
   }
 
   ngOnInit(): void {
+    console.log(this.headerComponent)
     this.roomList=[
       {
         roomNumber:101,

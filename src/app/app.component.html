@@ -1,7 +1,20 @@
-<h1>
-  Hello Abhishek
-</h1>
-<app-rooms></app-rooms>
+<h1>Hello Abhishek</h1>
+<!-- <app-rooms></app-rooms> -->
+
+<app-container>
+  <app-rooms></app-rooms>
+  <app-employee></app-employee>
+  <h1>this is from ng-content</h1>
+</app-container>
+
+<div #name></div>
+<!-- Dynamically render component -->
+
+<!-- <div>
+  <ng-template #user></ng-template>
+  <h1>welcome user</h1>
+</div> -->
+
 <!-- <div [ngSwitch]="role">
 <div *ngSwitchCase="'User'">
   Welcome User

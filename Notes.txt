@@ -57,3 +57,9 @@ this.roomList =[...this.roomList,room]
 or input properties get updated or new value
 very useful in case you want to control what value needs to be updated whenever new data is passed
 you want to run change detection mannually,Services!
+
+ngAfterViewInit (whatever view i have it also initialise)>> viewChild
+ngAfterViewChecked
+ViewChild> template ref > Dynamic load component
+
+ngAfterContentInit>>@ContentChild()>ng-content  content projection
