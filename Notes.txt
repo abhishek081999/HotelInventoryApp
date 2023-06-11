@@ -63,3 +63,34 @@ ngAfterViewChecked
 ViewChild> template ref > Dynamic load component
 
 ngAfterContentInit>>@ContentChild()>ng-content  content projection
+
+
+//Dependency Injection
+DI Providers
+Dependencies are services or object needed by classes to perform some function.
+it's a Design Pattern
+Angular has built-in Dependencies Injection Support
+(DI Providers .>Class Based providers. Value Providers.> Factory)
+Service ng g s <srevice-name>  (Reusable code)
+                    Depencency Resolution>:      
+
+                                 NullInjector()
+                          always throw an Error unless
+                               you use @Optional()
+                                       ^
+                                      ||
+                                 ModuleInjector
+                         ( Configure by PlatformModule )
+             has special things like DomSanitizer=> PlatformBrowser()
+                                       ^
+                                       ||
+                                Root ModuleInjector
+                         ( Configured by YourAppModule)
+                 has things for your app =>bootstrapModule(YourAppModule)
+                            
+Resolution MOdifier
+@Self   @SkipSelf @Optional @Host 
+
+
+
+                                     

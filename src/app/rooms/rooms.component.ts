@@ -1,6 +1,7 @@
-import { AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit, QueryList, SkipSelf, ViewChild, ViewChildren } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { HeaderComponent } from '../header/header.component';
+import {RoomsService}from './Services/rooms.service'
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
@@ -20,7 +21,10 @@ export class RoomsComponent implements OnInit,DoCheck,AfterViewInit,AfterViewChe
   };
   roomList: RoomList[] = [];
   selectedRoom!:RoomList;
-  constructor() {}
+  // roomService = new RoomsService()
+  constructor(@SkipSelf()
+ private roomsService:RoomsService
+  ) {}
   
   ngAfterViewChecked(): void {
     // throw new Error('Method not implemented.');
@@ -41,40 +45,7 @@ export class RoomsComponent implements OnInit,DoCheck,AfterViewInit,AfterViewChe
 
   ngOnInit(): void {
     console.log(this.headerComponent)
-    this.roomList=[
-      {
-        roomNumber:101,
-        roomType: 'Delux Room',
-        amenities: 'Air conditioner ,Free WiFi, TV, Bathroom, Kitchen',
-        price: 500,
-        photos: 'https://unsplash.com/photos/rlwE8f8anOc',
-        checkinTime: new Date('11-Nov-2022'),
-        checkoutTime: new Date('12-Nov-2022'),
-        rating:4.5,
-      },
-      {
-        roomNumber:102,
-        roomType: ' Semi Delux Room',
-        amenities: 'Air conditioner ,Free WiFi, TV, Bathroom, Kitchen',
-        price: 400,
-        photos: 'https://unsplash.com/photos/rlwE8f8anOc',
-        checkinTime: new Date('11-Nov-2022'),
-        checkoutTime: new Date('12-Nov-2022'),
-        rating:6.4,
-  
-      },
-      {
-        roomNumber:103,
-        roomType: 'Room',
-        amenities: 'Air conditioner ,Free WiFi, TV, Bathroom, Kitchen',
-        price: 300,
-        photos: 'https://unsplash.com/photos/rlwE8f8anOc',
-        checkinTime: new Date('11-Nov-2022'),
-        checkoutTime: new Date('12-Nov-2022'),
-        rating:7,
-  
-      },
-    ];
+    this.roomList = this.roomsService.getRooms();
   }
 
  
