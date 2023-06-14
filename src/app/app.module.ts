@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,8 +10,18 @@ import { RoomsListComponent } from './rooms/rooms-list/rooms-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
 import { EmployeeComponent } from './employee/employee.component';
-import {APP_SERVICE_CONFIG,APP_CONFIG} from './AppConfig/appConfig.service'
-import {HttpClientModule} from '@angular/common/http'
+import { APP_SERVICE_CONFIG, APP_CONFIG } from './AppConfig/appConfig.service';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClientModule,
+  HttpRequest,
+} from '@angular/common/http';
+import { RequestInterceptor } from './request.interceptor';
+import { InitService } from './init.service';
+function initFactory(initService: InitService) {
+  return () => initService.init();
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +29,7 @@ import {HttpClientModule} from '@angular/common/http'
     RoomsListComponent,
     HeaderComponent,
     ContainerComponent,
-    EmployeeComponent
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,10 +38,25 @@ import {HttpClientModule} from '@angular/common/http'
     HttpClientModule,
     // NgbModule
   ],
-  providers: [{
-    provide:APP_SERVICE_CONFIG,
-    useValue:APP_CONFIG,
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: APP_SERVICE_CONFIG,
+      useValue: APP_CONFIG,
+    },
+    InitService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initFactory,
+      deps: [InitService],
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true,
+    },
+    
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

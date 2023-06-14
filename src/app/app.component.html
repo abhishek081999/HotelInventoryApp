@@ -1,13 +1,13 @@
-<h1>Hello Abhishek</h1>
-<app-rooms></app-rooms>
+<!-- <h1>Hello Abhishek</h1> -->
+<!-- <app-rooms></app-rooms> -->
 <!-- <app-employee></app-employee> -->
-<app-container>
+<!-- <app-container>
   <app-rooms></app-rooms>
   <app-employee></app-employee>
   <h1>this is from ng-content</h1>
-</app-container>
+</app-container> -->
 
-<div #name></div>
+<!-- <div #name></div> -->
 <!-- Dynamically render component -->
 
 <!-- <div>
@@ -26,3 +26,6 @@
   You are not authorized to view this page
 </div>
 </div> -->
+<a [routerLink]="'rooms'">Rooms</a>||
+<a [routerLink]="'employee'">Employee</a>
+<router-outlet></router-outlet>

@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ViewChild, ViewContainerRef ,ComponentFactory
 import { RoomsComponent } from './rooms/rooms.component';
 import{LoggerService} from './logger.service'
 import {localStorageToken} from './localstorage.token'
+import { InitService } from './init.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,9 +19,13 @@ export class AppComponent implements OnInit {
 
 
 //   @ViewChild('user',{read:ViewContainerRef})vcr:ViewContainerRef;
+
  constructor(private resolver: ComponentFactoryResolver,
   @Optional() private loggerService:LoggerService,
-  @Inject(localStorageToken)private localStorage:Storage){
+  @Inject(localStorageToken)private localStorage:any,
+  private initService:InitService){
+    console.log(initService.config);
+    
 
 }
 ngOnInit(): void {

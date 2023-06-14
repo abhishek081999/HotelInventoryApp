@@ -134,3 +134,9 @@ Http request>>>>
   ShareReplay>>cach the request so don't have to make call again
   CatchError
   Map operators
+
+  Http Interceptors and APP_INITIALIZER
+  Allow us to intercept request
+  we can change data and add headers
+  APP_INITIALIZER allows you to inject function as application startup.
+  it loads the data before app get initialized  , {configurations}
