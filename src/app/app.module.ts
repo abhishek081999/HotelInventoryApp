@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
 import { EmployeeComponent } from './employee/employee.component';
 import {APP_SERVICE_CONFIG,APP_CONFIG} from './AppConfig/appConfig.service'
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import {APP_SERVICE_CONFIG,APP_CONFIG} from './AppConfig/appConfig.service'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     // NgbModule
   ],
   providers: [{

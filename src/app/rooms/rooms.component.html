@@ -3,7 +3,7 @@
 <!-- <app-header></app-header>
 <app-header></app-header>
 <app-header></app-header> -->
-
+<!-- {{rooms$ |async |json}} //////async pipe stream of data come and we can see -->
 <!-- <h1>Welcome to {{hotelName}}</h1> -->
 <div [hidden]="hideRooms">
     Number of Rooms:
@@ -20,13 +20,22 @@
 <div>
     <button (click)="addRoom()">Add Room</button>
 </div>
+
+<h1>
+    <!-- {{getError$|async}} -->
+    Number of Rooms: {{roomsCount$|async}}
+</h1>
 <!-- {{roomList|json}} -->
 <!-- <div *ngIf="rooms.availableRooms>0"> -->
-    <div *ngIf="hideRooms">
+    <!-- <div *ngIf="hideRooms"> -->
+        <div *ngIf="rooms$ |async as rooms">
     <!-- {{roomList}} -->
-    <app-rooms-list [rooms]="roomList" [title]="title"
+    <app-rooms-list [rooms]="rooms" [title]="title"
     (selectedRoom)="selectRoom($event)"></app-rooms-list>
 </div>
 
 <button (click)="toggle()">Toggle</button>
+<button (click)="editRoom()">Edit Room</button>
+<button (click)="deleteRoom()">Delete Room</button>
+<h1>{{totalBytes}} loaded</h1>
 <!-- document.getElementById('numberOfRooms').innerText = numberOfRooms; -->

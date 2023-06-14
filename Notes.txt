@@ -92,5 +92,45 @@ Resolution MOdifier
 @Self   @SkipSelf @Optional @Host 
 
 
+//HttpClient & RxJs Obserable
+    setting Up HttpClient
+    Rxjs, obserable and streams 
+    http methods Rxjs Operators
+    http Interceptors
+    APP_INITIALIZER
+Push vs Pull Architecture
+getData -> addData -> getData  Pull
+getData ->continus streamof data -> addData
 
-                                     
+Rxjs is library for  writing Reactive Programmig.
+Obeserables are stream of data to which we can subscribe.
+ stream = new Observable(observer =>{    
+    observer.next('user1');
+    observer.next('user2');
+    observer.next('user3');
+    observer.complete();
+    // observer.error('error');
+  })
+
+  this.stream.subscribe((data)=>{console.log(data)});
+    this.stream.subscribe({
+      next:(value)=> console.log(value),
+      complete:()=> console.log('complete'),
+      error:(err)=> console.log(err),
+    })
+Http request>>>>
+    getPhotos() {
+    const request = new HttpRequest(
+      'GET',
+      `https://jsonplaceholder.typicode.com/photos`,
+      {
+        reportProgress: true,
+      }
+    );
+    return this.http.request(request);
+  }
+
+  //Rxjs Operators    Everything happen in stream o data before subscribe
+  ShareReplay>>cach the request so don't have to make call again
+  CatchError
+  Map operators
