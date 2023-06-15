@@ -140,3 +140,11 @@ Http request>>>>
   we can change data and add headers
   APP_INITIALIZER allows you to inject function as application startup.
   it loads the data before app get initialized  , {configurations}
+
+//Routing
+
+import RouterModule
+forRoot method allows us to add multiple route configdefault route
+dynamic route
+wildcard route 404
+Activated route service>allow to read the router data, allow access to snapshot data. Allows to access data from Route Config.

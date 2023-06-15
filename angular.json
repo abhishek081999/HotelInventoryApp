@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.scss"
@@ -75,12 +76,12 @@
             "production": {
               "browserTarget": "hotelinventoryapp:build:production"
             },
-            "development":{
+            "development": {
               "browserTarget": "hotelinventoryapp:build:development",
               "proxyConfig": "src/proxy.conf.json"
             }
           },
-          "dafaultConfiguration":"development"
+          "dafaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -100,6 +101,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.scss"
