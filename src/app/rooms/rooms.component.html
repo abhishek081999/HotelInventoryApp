@@ -5,6 +5,7 @@
 <app-header></app-header> -->
 <!-- {{rooms$ |async |json}} //////async pipe stream of data come and we can see -->
 <!-- <h1>Welcome to {{hotelName}}</h1> -->
+<router-outlet></router-outlet>
 <div [hidden]="hideRooms">
     Number of Rooms:
     <div [ngStyle]="{'color':rooms?.availableRooms >0?'green':'red'}" 
@@ -18,7 +19,7 @@
     {{selectedRoom|json}}
 </div>
 <div>
-    <button (click)="addRoom()">Add Room</button>
+    <button (click)="addRoom()" routerLink="add">Add Room</button>
 </div>
 
 <h1>
@@ -39,3 +40,4 @@
 <button (click)="deleteRoom()">Delete Room</button>
 <h1>{{totalBytes}} loaded</h1>
 <!-- document.getElementById('numberOfRooms').innerText = numberOfRooms; -->
+<!-- <router-outlet></router-outlet> -->

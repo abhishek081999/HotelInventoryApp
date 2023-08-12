@@ -5,8 +5,11 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="'rooms'">Roomsk </a>
+      <a mat-list-item [routerLink]="'rooms'">Rooms</a>
       <a mat-list-item [routerLink]="'employee'">Employee</a>
+      <a mat-list-item [routerLink]="'rooms/add'">Add Room</a>
+      <a mat-list-item [routerLink]="'booking'">Bookings</a>
+
       <!-- <a mat-list-item [routerLink]="">Link 3</a> -->
     </mat-nav-list>
   </mat-sidenav>
@@ -23,6 +26,7 @@
       <span>hotelinventoryapp</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

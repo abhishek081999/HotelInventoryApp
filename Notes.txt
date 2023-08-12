@@ -148,3 +148,59 @@ forRoot method allows us to add multiple route configdefault route
 dynamic route
 wildcard route 404
 Activated route service>allow to read the router data, allow access to snapshot data. Allows to access data from Route Config.
+
+
+//template drivin form
+Import FormsModule to Module
+ngModel for 2 way binding
+Use HTML5 validations to validate forms. required
+disable property to avoid submitting blank forms.
+use #templateVariable to access the state of forms.
+
+Custom directive with forms
+n g g d hover 
+change behaviourof dom on hover 
+use HostListner to listen to events
+directives :>> are similar to  component but thay are never have template
+
+custom validators for template drivin forms.
+add logic to validate the Form Fied
+
+Access the routing events
+Navigate using router service
+
+
+Feature Module and Routing
+creating Feature module 
+configuring routing at feature module level
+forChild used to configure the routes
+
+nested routes & child route
+using child  routes we can do nested routing
+allowes to load child routes.
+
+Lazy Loading
+Allows to split the code at module level 
+load  code when user need it
+reduce  main bundle DomSanitizer
+
+with lazy loaded
+ng g m  booking --route=booking --routing --module=app
+
+without lazy loaded
+ng g m search
+ng g c search
+
+Provider type 
+root 
+any for lazy loaded modules new instance of service 
+
+
+Router Events
+
+Route Guards******************
+canActivate
+canActivateChild
+canDeactivate
+canLoad
+Resolve

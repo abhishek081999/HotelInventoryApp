@@ -1,0 +1,14 @@
+<form>
+    <div class="form-group">
+        <!-- <input appHover type="email" color="steelblue" name="email" class="form-control" [(ngModel)]="email" placeholder="Provide your email"> -->
+        <input #emailcontrol="ngModel"  appEmailvalidator appHover="grey" type="email"  name="email" class="form-control" [(ngModel)]="email" placeholder="Provide your email">
+<!-- <div>{{emailcontrol.errors |json}}</div> -->
+    </div>
+    <div class="form-group">
+        <input  appHover type="email" color="steelblue" name="password" class="form-control" [(ngModel)]="password" placeholder="Provide your password">
+
+    </div>
+    <div class="form-group">
+<button class="btn btn-primary" (click)="login()">Login</button>
+    </div>
+</form>

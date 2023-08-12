@@ -16,6 +16,7 @@ import { RoomsService } from './Services/rooms.service';
 import { Observable, Subject, Subscription, of } from 'rxjs';
 import { HttpEventType } from '@angular/common/http';
 import { catchError ,map} from 'rxjs/operators';
+import {ConfigService} from '../services/config.service'
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
@@ -65,7 +66,8 @@ export class RoomsComponent
   )
   constructor(
     @SkipSelf()
-    private roomsService: RoomsService
+    private roomsService: RoomsService,
+    private configService:ConfigService
   ) {}
   ngOnInit(): void {
     // console.log(this.headerComponent);
