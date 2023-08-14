@@ -1,16 +1,16 @@
 
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <!-- <app-header></app-header>
 <app-header></app-header>
 <app-header></app-header> -->
 <!-- {{rooms$ |async |json}} //////async pipe stream of data come and we can see -->
 <!-- <h1>Welcome to {{hotelName}}</h1> -->
 <router-outlet></router-outlet>
-<div [hidden]="hideRooms">
+<!-- <div [hidden]="hideRooms">
     Number of Rooms:
     <div [ngStyle]="{'color':rooms?.availableRooms >0?'green':'red'}" 
     [innerText]="numberOfRooms"></div>
-</div>
+</div> -->
 
 <!-- Null collision -->
 <!-- {{rooms?.availableRooms ?? 'No Rooms'}}  -->
@@ -19,25 +19,25 @@
     {{selectedRoom|json}}
 </div>
 <div>
-    <button (click)="addRoom()" routerLink="add">Add Room</button>
+    <button (click)="addRoom()"class="btn btn-success" [routerLink]="'add'">Add Room</button>
 </div>
 
-<h1>
+<!-- <h1> -->
     <!-- {{getError$|async}} -->
-    Number of Rooms: {{roomsCount$|async}}
-</h1>
+    <!-- Number of Rooms: {{roomsCount$|async}}
+</h1> -->
 <!-- {{roomList|json}} -->
 <!-- <div *ngIf="rooms.availableRooms>0"> -->
     <!-- <div *ngIf="hideRooms"> -->
-        <div *ngIf="rooms$ |async as rooms">
+         <div *ngIf="rooms$ |async as rooms"> 
     <!-- {{roomList}} -->
     <app-rooms-list [rooms]="rooms" [title]="title"
     (selectedRoom)="selectRoom($event)"></app-rooms-list>
-</div>
-
+</div> 
+<!-- 
 <button (click)="toggle()">Toggle</button>
 <button (click)="editRoom()">Edit Room</button>
 <button (click)="deleteRoom()">Delete Room</button>
-<h1>{{totalBytes}} loaded</h1>
+<h1>{{totalBytes}} loaded</h1> -->
 <!-- document.getElementById('numberOfRooms').innerText = numberOfRooms; -->
 <!-- <router-outlet></router-outlet> -->

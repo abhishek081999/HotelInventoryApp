@@ -204,3 +204,53 @@ canActivateChild
 canDeactivate
 canLoad
 Resolve
+
+reactive forms ******************
+setting up reactive forms 
+creating forms
+Adding control dynamically
+built in validations
+Submit and reset forms
+listining to form values changes using valueChanges
+patchValues vs setValues
+using Rxjs Map operators
+implemeting custom validations
+
+setting up reactive forms 
+import ReactiveFormsModule to module
+in reactive Forms we create Forms using Typescript
+more control in ts file
+uses Forms API like FormGroup, FormControl and Form Directives like FormControl
+
+
+Creating Forms
+Use FormControl class to create Form Controls.
+USe FormGroup to group multiple Controls
+use FormBuilder to build complex forms. //Service
+
+Add control dynamically
+Using addControl to add control
+using removeControl to remove control
+
+built-in validations
+Use Vakidators class to access built-in validations
+min max required requiredTrue email  minLength maxLength pattern
+
+patchValue  Vs  setValues
+While binding data we can use setValue or patchValues
+While using setValue we need to pass all properties in Form
+patchValue allows to skip the values for FormControls.  
+
+
+listining to Form Value changes
+valueChanges event allows to listen to all value changes.
+Useful to capture changes happening in real-time
+
+Using RxJs Map Operators
+Using mergeMap operator
+Using switchMap operator
+Using exhaustMap operator
+
+writing custom validators
+Add validations for control
+add form level validations
