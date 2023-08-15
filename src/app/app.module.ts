@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +34,7 @@ import { RouterModule } from '@angular/router';
 // import {RoomsModule} from'./rooms/rooms.module'
 import {HeaderModule} from './header/header.module'
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import{GlobalErrorHandler} from'./errorhandler.service'
 function initFactory(initService: InitService) {
   return () => initService.init();
 }
@@ -92,6 +93,7 @@ function initFactory(initService: InitService) {
       useClass: RequestInterceptor,
       multi: true,
     },
+    {provide:ErrorHandler,useClass:GlobalErrorHandler}
     
   ],
   bootstrap: [AppComponent],
