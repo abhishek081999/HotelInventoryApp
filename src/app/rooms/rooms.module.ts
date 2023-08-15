@@ -5,21 +5,25 @@ import { RoomsRoutingModule } from './rooms-routing.module';
 import{RoomsListComponent} from '../rooms/rooms-list/rooms-list.component';
 import {RoomsBookingComponent} from '../rooms/rooms-booking/rooms-booking.component';
 import {RoomsAddComponent} from '../rooms/rooms-add/rooms-add.component'
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HeaderModule } from '../header/header.module';
 import { HeaderComponent } from '../header/header.component';
+import { FilterPipe } from './filter.pipe';
 @NgModule({
   declarations: [
     RoomsComponent,
     RoomsListComponent,
     RoomsBookingComponent,
 
-    RoomsAddComponent,],
+    RoomsAddComponent,
+
+    FilterPipe,],
   imports: [
     CommonModule,
     RoomsRoutingModule,
     FormsModule,
-    HeaderModule
+    HeaderModule,
+    ReactiveFormsModule
   ]
 })
 export class RoomsModule { }

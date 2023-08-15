@@ -4,6 +4,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import {BookingService} from './booking.service'
 import { exhaustMap, mergeMap, switchMap } from 'rxjs/operators';
 import {CustomValidator} from './validators/custom-validators'
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
@@ -18,12 +19,12 @@ bookingForm! : FormGroup;
    }
 
   constructor(private configService:ConfigService,private fb: FormBuilder,
-    private bookingService:BookingService) { }
+    private bookingService:BookingService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-
+const roomId = this.route.snapshot.paramMap.get('roomid')
     this.bookingForm= this.fb.group({
-      roomId: new FormControl({value:'',disabled:true},{validators:[Validators.required]}),
+      roomId: new FormControl({value:roomId,disabled:true},{validators:[Validators.required]}),
       guestEmail: ['',{updateOn:'blur',validators:[Validators.required,Validators.email]}],
       checkinDate: [''],
       checkoutDate: [''],
@@ -114,7 +115,7 @@ this.bookingForm.reset({
   getBookingData(){
     // this.bookingForm.setValue({
       this.bookingForm.patchValue({
-      roomId: '2',
+     
       guestEmail: 'test@gmail.com',
       checkinDate: new Date('13-Aug-2023'),
       checkoutDate: '',

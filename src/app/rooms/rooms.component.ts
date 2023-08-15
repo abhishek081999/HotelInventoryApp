@@ -17,6 +17,7 @@ import { Observable, Subject, Subscription, of } from 'rxjs';
 import { HttpEventType } from '@angular/common/http';
 import { catchError ,map} from 'rxjs/operators';
 import {ConfigService} from '../services/config.service'
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
@@ -69,6 +70,8 @@ export class RoomsComponent
     private roomsService: RoomsService,
     private configService:ConfigService
   ) {}
+
+  priceFilter= new FormControl(0)
   ngOnInit(): void {
     // console.log(this.headerComponent);
     this.roomsService.getPhotos().subscribe((event) => {
@@ -106,6 +109,7 @@ export class RoomsComponent
     // this.roomList =rooms;
     // });
   }
+  
 
   ngAfterViewChecked(): void {
     // throw new Error('Method not implemented.');

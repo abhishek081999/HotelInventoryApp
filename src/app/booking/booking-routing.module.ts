@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { BookingComponent } from './booking.component';
-
-const routes: Routes = [{ path: '', component: BookingComponent }];
+import{BookingGuard} from'./guards/booking.guard'
+const routes: Routes = [{ path: '', component: BookingComponent,canDeactivate:[BookingGuard] }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

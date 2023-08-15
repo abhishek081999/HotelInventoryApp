@@ -186,6 +186,7 @@ reduce  main bundle DomSanitizer
 
 with lazy loaded
 ng g m  booking --route=booking --routing --module=app
+ng g m comment --route=comment --routing  --module=app
 
 without lazy loaded
 ng g m search
@@ -203,7 +204,7 @@ canActivate
 canActivateChild
 canDeactivate
 canLoad
-Resolve
+Resolve related to data fethching prefetching
 
 reactive forms ******************
 setting up reactive forms 
@@ -254,3 +255,5 @@ Using exhaustMap operator
 writing custom validators
 Add validations for control
 add form level validations
+
+canDeactivate Guards

@@ -33,6 +33,7 @@ import { EmailvalidatorDirective } from './emailValidator/emailvalidator.directi
 import { RouterModule } from '@angular/router';
 // import {RoomsModule} from'./rooms/rooms.module'
 import {HeaderModule} from './header/header.module'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 function initFactory(initService: InitService) {
   return () => initService.init();
 }
@@ -64,7 +65,8 @@ function initFactory(initService: InitService) {
     MatListModule,
     FormsModule,
     RouterModule,
-    HeaderModule
+    HeaderModule,
+    MatSnackBarModule
     // NgbModule
   ],
   providers: [
