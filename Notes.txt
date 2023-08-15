@@ -261,3 +261,7 @@ resolve
 
 
 Testing
+
+Deployment
+
+"build:prod":"ng build -c=production"

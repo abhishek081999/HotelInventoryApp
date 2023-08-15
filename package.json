@@ -6,8 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "watch":"ng build --watch --configuration development",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:prod":"ng build -c=production"
   },
   "private": true,
   "dependencies": {
